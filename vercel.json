@@ -11,5 +11,8 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "env": {
+    "YOUR_ENV_VARIABLE": "value"
+  }
 }
