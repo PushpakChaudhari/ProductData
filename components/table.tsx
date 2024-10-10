@@ -32,7 +32,7 @@ interface Transaction {
 }
 
 // Function to format the date for the "createdAt" field
-const formatDate = (date: string): string => {
+const formatDate = (date: string): string => { // Specify date as string
   return new Date(date).toLocaleString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
@@ -43,6 +43,7 @@ const formatDate = (date: string): string => {
     day: "numeric",
   });
 };
+
 
 const months = [
   "January", "February", "March", "April", "May", "June",
