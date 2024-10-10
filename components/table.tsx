@@ -1,4 +1,3 @@
-// components/TableComponent.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -17,6 +16,7 @@ import {
 } from "@mui/material";
 import Image from "next/image"; // Import Image from next/image
 import sampleData from "../data/sample-data.json"; // Adjust path as needed
+import StatisticsBox from '../components/StatisticsBox';
 
 // Define the type for the sample data
 interface Transaction {
@@ -83,7 +83,10 @@ const TableComponent = () => {
 
   return (
     <div style={{ backgroundColor: "#f9f9f9", color: "#333", minHeight: "100vh", padding: "1rem" }}>
+      {/* Remove the title here */}
+      {/* <h1 style={titleStyle}>Transaction Table</h1> */}
       {/* Search and Filter Components */}
+      <StatisticsBox selectedMonth={selectedMonth} />
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
         <TextField
           label="Search by Title"
@@ -179,6 +182,15 @@ const TableComponent = () => {
       </div>
     </div>
   );
+};
+
+// Title styles
+const titleStyle: React.CSSProperties = {
+  fontSize: "2rem", // Increase font size
+  fontWeight: "bold", // Make the text bold
+  color: "#3f51b5", // Change the color of the title
+  marginBottom: "20px", // Add some space below the title
+  textAlign: "center", // Center the title
 };
 
 export default TableComponent;
