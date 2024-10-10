@@ -32,8 +32,8 @@ interface Transaction {
 }
 
 // Function to format the date for the "createdAt" field
-const formatDate = (date: string): string => // Explicitly define the parameter type as string
-  new Date(date).toLocaleString("en-GB", {
+const formatDate = (date: string): string => {
+  return new Date(date).toLocaleString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
@@ -42,6 +42,7 @@ const formatDate = (date: string): string => // Explicitly define the parameter 
     month: "numeric",
     day: "numeric",
   });
+};
 
 const months = [
   "January", "February", "March", "April", "May", "June",
@@ -83,9 +84,6 @@ const TableComponent = () => {
 
   return (
     <div style={{ backgroundColor: "#f9f9f9", color: "#333", minHeight: "100vh", padding: "1rem" }}>
-      {/* Remove the title here */}
-      {/* <h1 style={titleStyle}>Transaction Table</h1> */}
-      {/* Search and Filter Components */}
       <StatisticsBox selectedMonth={selectedMonth} />
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
         <TextField
@@ -182,15 +180,6 @@ const TableComponent = () => {
       </div>
     </div>
   );
-};
-
-// Title styles
-const titleStyle: React.CSSProperties = {
-  fontSize: "2rem", // Increase font size
-  fontWeight: "bold", // Make the text bold
-  color: "#3f51b5", // Change the color of the title
-  marginBottom: "20px", // Add some space below the title
-  textAlign: "center", // Center the title
 };
 
 export default TableComponent;
